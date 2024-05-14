@@ -3,24 +3,46 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start-db": "./start-container.sh",
     "dev": "next dev",
-    "build": "next build",
+    "prettier": "prettier --write --ignore-unknown .",
+    "prettier:check": "prettier --check --ignore-unknown .",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migration:start": "npx prisma migrate dev --name init",
+    "migration:remove": "npx prisma migrate reset",
+    "migration:seed": "node -r dotenv/config ./scripts/seed.js"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.3"
+    "@heroicons/react": "^2.0.18",
+    "@prisma/client": "^5.13.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@types/node": "^20.12.11",
+    "@vercel/postgres": "^0.5.1",
+    "autoprefixer": "10.4.15",
+    "bcrypt": "^5.1.1",
+    "clsx": "^2.0.0",
+    "next": "^14.0.2",
+    "pdf-lib": "^1.17.1",
+    "postcss": "8.4.31",
+    "prisma": "^5.13.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.3",
+    "typescript": "^5.4.5",
+    "zod": "^3.22.2"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "@types/bcrypt": "^5.0.1",
+    "@types/jspdf": "^2.0.0",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "18.2.14",
+    "@vercel/style-guide": "^5.0.1",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.52.0",
+    "eslint-config-next": "^14.0.0",
+    "eslint-config-prettier": "9.0.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "0.5.4"
   }
 }
